@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, Loader2, CreditCard, Calendar } from 'lucide-react';
@@ -48,13 +47,13 @@ export const Checkout: React.FC = () => {
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            className="relative bg-[#FFFBF5] w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden"
+            className="relative bg-[#FFFBF5] w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl"
           >
             {step === 'form' ? (
-              <form onSubmit={handleSubmit} className="p-8">
-                <div className="flex justify-between items-center mb-8">
+              <form onSubmit={handleSubmit} className="p-6 md:p-8">
+                <div className="flex justify-between items-center mb-6 md:mb-8">
                   <div>
-                    <h2 className="text-3xl font-serif font-bold text-amber-900">Checkout</h2>
+                    <h2 className="text-2xl md:text-3xl font-serif font-bold text-amber-900">Checkout</h2>
                     <p className="text-amber-800/60 text-sm">Complete your delicious order</p>
                   </div>
                   <button 

@@ -215,7 +215,7 @@ export const Customizer: React.FC = () => {
                   {viewMode === 'create' && (
                     <button 
                       onClick={() => setIsSommelierOpen(!isSommelierOpen)}
-                      className="ml-0 sm:ml-2 w-fit px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm font-medium border border-purple-200 hover:bg-purple-200 transition-colors flex items-center gap-1.5"
+                      className="ml-0 sm:ml-2 w-fit px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium border border-purple-200 hover:bg-purple-200 transition-colors flex items-center gap-1.5 shadow-sm"
                     >
                       <Wand2 className="w-3 h-3" />
                       <span>AI Sommelier</span>
@@ -259,19 +259,19 @@ export const Customizer: React.FC = () => {
                       <h3 className="font-serif font-bold text-purple-900 text-lg">The Mood Matcher</h3>
                     </div>
                     <p className="text-sm text-purple-900/60 mb-4">Tell us how you're feeling, or describe the perfect vibe. We'll curate the rest.</p>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col sm:flex-row gap-3">
                       <input 
                         type="text" 
                         value={moodInput}
                         onChange={(e) => setMoodInput(e.target.value)}
                         placeholder="e.g. It's a rainy Sunday and I need comfort..."
-                        className="flex-1 bg-white border border-purple-200 rounded-xl px-4 py-2 text-purple-900 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                        className="flex-1 bg-white border border-purple-200 rounded-xl px-4 py-3 text-purple-900 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500/20 w-full"
                         autoFocus
                       />
                       <button 
                         type="submit"
                         disabled={isSommelierThinking || !moodInput.trim()}
-                        className="bg-purple-600 text-white px-4 py-2 rounded-xl font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                        className="bg-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 w-full sm:w-auto shadow-md"
                       >
                         {isSommelierThinking ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Curate'}
                       </button>
@@ -297,7 +297,7 @@ export const Customizer: React.FC = () => {
                       <span className="text-xs font-bold text-amber-900/40 uppercase tracking-wider">Select Base</span>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {WAFFLE_BASES.map(base => (
                         <motion.button
                           key={base.id}
