@@ -29,7 +29,7 @@ export const Cart: React.FC = () => {
             className="fixed top-0 right-0 h-full w-full max-w-md bg-[#FFFbf5] shadow-2xl z-[70] flex flex-col border-l border-amber-900/5"
           >
             {/* Header */}
-            <div className="p-4 md:p-6 border-b border-amber-900/10 flex items-center justify-between bg-white/50">
+            <div className="p-4 md:p-6 border-b border-amber-900/10 flex items-center justify-between bg-white/50 shrink-0">
               <div className="flex items-center gap-3">
                 <ShoppingBag className="w-5 h-5 text-amber-900" />
                 <h2 className="text-xl md:text-2xl font-serif font-bold text-amber-900">Your Order</h2>
@@ -87,9 +87,9 @@ export const Cart: React.FC = () => {
               )}
             </div>
 
-            {/* Footer */}
+            {/* Footer - Sticky */}
             {items.length > 0 && (
-              <div className="p-4 md:p-6 bg-white border-t border-amber-900/10 space-y-4">
+              <div className="p-4 md:p-6 bg-white border-t border-amber-900/10 space-y-4 shrink-0 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] z-10">
                 <div className="space-y-2 text-sm text-amber-900/60">
                   <div className="flex justify-between">
                     <span>Subtotal</span>

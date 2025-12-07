@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, X, Loader2, CreditCard, Calendar } from 'lucide-react';
+import { Check, X, Loader2, CreditCard } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Button } from './Button';
 
@@ -76,13 +76,13 @@ export const Checkout: React.FC = () => {
                   <div className="space-y-4">
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-amber-900/50 mb-1">Full Name</label>
-                      <input required type="text" placeholder="Jane Doe" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
+                      <input required type="text" placeholder="Jane Doe" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
                     </div>
                     
                     <div>
                        <label className="block text-xs font-bold uppercase tracking-wider text-amber-900/50 mb-1">Card Number</label>
                        <div className="relative">
-                          <input required type="text" placeholder="0000 0000 0000 0000" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-900 pl-11 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
+                          <input required type="text" placeholder="0000 0000 0000 0000" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-base text-amber-900 pl-11 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
                           <CreditCard className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-amber-400" />
                        </div>
                     </div>
@@ -90,11 +90,11 @@ export const Checkout: React.FC = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-bold uppercase tracking-wider text-amber-900/50 mb-1">Expiry</label>
-                        <input required type="text" placeholder="MM/YY" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
+                        <input required type="text" placeholder="MM/YY" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
                       </div>
                       <div>
                         <label className="block text-xs font-bold uppercase tracking-wider text-amber-900/50 mb-1">CVC</label>
-                        <input required type="text" placeholder="123" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
+                        <input required type="text" placeholder="123" className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-base text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-500/20" />
                       </div>
                     </div>
                   </div>

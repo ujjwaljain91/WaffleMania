@@ -179,7 +179,7 @@ export const Customizer: React.FC = () => {
   }, []);
 
   return (
-    <section id="customizer" className="py-24 md:py-32 relative overflow-hidden bg-[#FAF7F2]">
+    <section id="customizer" className="py-20 md:py-32 relative overflow-hidden bg-[#FAF7F2]">
       {/* Ambient Background Texture */}
       <div className="absolute inset-0 opacity-[0.4] pointer-events-none"
            style={{ backgroundImage: `radial-gradient(#E5E5E5 1px, transparent 1px)`, backgroundSize: '24px 24px' }} 
@@ -190,10 +190,10 @@ export const Customizer: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-100/50 blur-[100px] pointer-events-none rounded-full" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
           
-          {/* Left Panel: The Menu / Controls */}
-          <div className="w-full lg:w-5/12 space-y-12 order-2 lg:order-1">
+          {/* Left Panel: The Menu / Controls (Order 2 on Mobile to stay below Visual) */}
+          <div className="w-full lg:w-5/12 space-y-8 lg:space-y-12 order-2 lg:order-1">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -202,11 +202,11 @@ export const Customizer: React.FC = () => {
             >
               <div>
                 <span className="text-amber-600 font-bold tracking-widest text-xs uppercase mb-2 block">The Atelier</span>
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-amber-950 mb-4">
+                <h2 className="text-3xl md:text-5xl font-serif font-bold text-amber-950 mb-4">
                   {viewMode === 'create' ? 'Design Your Palette' : 'Your Collections'}
                 </h2>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                  <p className="text-amber-900/60 text-lg font-light leading-relaxed">
+                  <p className="text-amber-900/60 text-base md:text-lg font-light leading-relaxed">
                     {viewMode === 'create' 
                       ? 'Select your canvas and adorn it.' 
                       : 'Revisit your masterpieces.'}
@@ -226,7 +226,7 @@ export const Customizer: React.FC = () => {
               
               <button 
                 onClick={() => setViewMode(viewMode === 'create' ? 'saved' : 'create')}
-                className="p-3 rounded-full bg-white border border-amber-200 text-amber-900 hover:bg-amber-50 transition-all shadow-sm group"
+                className="p-3 rounded-full bg-white border border-amber-200 text-amber-900 hover:bg-amber-50 transition-all shadow-sm group shrink-0"
                 title={viewMode === 'create' ? 'View Saved Collections' : 'Back to Designer'}
               >
                 {viewMode === 'create' ? (
@@ -244,13 +244,13 @@ export const Customizer: React.FC = () => {
                   initial={{ height: 0, opacity: 0, marginBottom: 0 }}
                   animate={{ height: 'auto', opacity: 1, marginBottom: 24 }}
                   exit={{ height: 0, opacity: 0, marginBottom: 0 }}
-                  className="overflow-hidden"
+                  className="overflow-hidden w-full"
                 >
-                  <form onSubmit={handleSommelierCurate} className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-purple-100 shadow-lg relative">
+                  <form onSubmit={handleSommelierCurate} className="bg-white/80 backdrop-blur-sm p-5 md:p-6 rounded-2xl border border-purple-100 shadow-lg relative">
                     <button 
                       type="button" 
                       onClick={() => setIsSommelierOpen(false)}
-                      className="absolute top-2 right-2 p-1 text-purple-900/30 hover:text-purple-900"
+                      className="absolute top-2 right-2 p-2 text-purple-900/30 hover:text-purple-900"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -259,19 +259,19 @@ export const Customizer: React.FC = () => {
                       <h3 className="font-serif font-bold text-purple-900 text-lg">The Mood Matcher</h3>
                     </div>
                     <p className="text-sm text-purple-900/60 mb-4">Tell us how you're feeling, or describe the perfect vibe. We'll curate the rest.</p>
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col gap-3">
                       <input 
                         type="text" 
                         value={moodInput}
                         onChange={(e) => setMoodInput(e.target.value)}
                         placeholder="e.g. It's a rainy Sunday and I need comfort..."
-                        className="flex-1 bg-white border border-purple-200 rounded-xl px-4 py-3 text-purple-900 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500/20 w-full"
+                        className="w-full bg-white border border-purple-200 rounded-xl px-4 py-3 text-base text-purple-900 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         autoFocus
                       />
                       <button 
                         type="submit"
                         disabled={isSommelierThinking || !moodInput.trim()}
-                        className="bg-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 w-full sm:w-auto shadow-md"
+                        className="w-full bg-purple-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md"
                       >
                         {isSommelierThinking ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Curate'}
                       </button>
@@ -288,7 +288,7 @@ export const Customizer: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  className="space-y-12"
+                  className="space-y-8 lg:space-y-12"
                 >
                   {/* 1. The Canvas (Base) */}
                   <div className="space-y-6">
@@ -347,7 +347,7 @@ export const Customizer: React.FC = () => {
                                 : 'border-transparent bg-white/40 hover:bg-white hover:shadow-md'
                             }`}
                           >
-                            <div className="relative w-14 h-14 shrink-0">
+                            <div className="relative w-12 h-12 md:w-14 md:h-14 shrink-0">
                               <img 
                                   src={topping.image} 
                                   alt={topping.name} 
@@ -363,8 +363,8 @@ export const Customizer: React.FC = () => {
                               )}
                             </div>
                             <div>
-                              <div className="text-sm font-medium text-amber-900 leading-tight">{topping.name}</div>
-                              <div className="text-xs text-amber-600 mt-1">+${topping.price}</div>
+                              <div className="text-xs md:text-sm font-medium text-amber-900 leading-tight">{topping.name}</div>
+                              <div className="text-[10px] md:text-xs text-amber-600 mt-1">+${topping.price}</div>
                             </div>
                           </button>
                         );
@@ -498,7 +498,7 @@ export const Customizer: React.FC = () => {
 
           </div>
 
-          {/* Right Panel: The Stage (Visual Preview) */}
+          {/* Right Panel: The Stage (Visual Preview) - Order 1 on mobile to show first */}
           <div className="w-full lg:w-7/12 sticky top-24 min-h-[400px] md:min-h-[600px] flex flex-col items-center justify-center order-1 lg:order-2">
              
              {/* AI Chef Note Card (Floating) */}
