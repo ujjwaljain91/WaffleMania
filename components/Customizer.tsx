@@ -179,7 +179,7 @@ export const Customizer: React.FC = () => {
   }, []);
 
   return (
-    <section id="customizer" className="py-32 relative overflow-hidden bg-[#FAF7F2]">
+    <section id="customizer" className="py-24 md:py-32 relative overflow-hidden bg-[#FAF7F2]">
       {/* Ambient Background Texture */}
       <div className="absolute inset-0 opacity-[0.4] pointer-events-none"
            style={{ backgroundImage: `radial-gradient(#E5E5E5 1px, transparent 1px)`, backgroundSize: '24px 24px' }} 
@@ -193,7 +193,7 @@ export const Customizer: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
           
           {/* Left Panel: The Menu / Controls */}
-          <div className="lg:w-5/12 space-y-12">
+          <div className="w-full lg:w-5/12 space-y-12 order-2 lg:order-1">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -202,10 +202,10 @@ export const Customizer: React.FC = () => {
             >
               <div>
                 <span className="text-amber-600 font-bold tracking-widest text-xs uppercase mb-2 block">The Atelier</span>
-                <h2 className="text-5xl font-serif font-bold text-amber-950 mb-4">
+                <h2 className="text-4xl md:text-5xl font-serif font-bold text-amber-950 mb-4">
                   {viewMode === 'create' ? 'Design Your Palette' : 'Your Collections'}
                 </h2>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                   <p className="text-amber-900/60 text-lg font-light leading-relaxed">
                     {viewMode === 'create' 
                       ? 'Select your canvas and adorn it.' 
@@ -215,7 +215,7 @@ export const Customizer: React.FC = () => {
                   {viewMode === 'create' && (
                     <button 
                       onClick={() => setIsSommelierOpen(!isSommelierOpen)}
-                      className="ml-2 px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm font-medium border border-purple-200 hover:bg-purple-200 transition-colors flex items-center gap-1.5"
+                      className="ml-0 sm:ml-2 w-fit px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm font-medium border border-purple-200 hover:bg-purple-200 transition-colors flex items-center gap-1.5"
                     >
                       <Wand2 className="w-3 h-3" />
                       <span>AI Sommelier</span>
@@ -374,12 +374,12 @@ export const Customizer: React.FC = () => {
 
                   {/* Footer Actions */}
                   <div className="bg-white p-6 rounded-2xl shadow-xl shadow-amber-900/5 border border-amber-100 space-y-6">
-                    <div className="flex justify-between items-end">
-                        <div>
+                    <div className="flex flex-col sm:flex-row justify-between items-end gap-4">
+                        <div className="w-full sm:w-auto">
                             <span className="text-sm text-amber-900/50 font-medium uppercase tracking-wider">Estimated Total</span>
                             <div className="text-4xl font-serif font-bold text-amber-900 mt-1">${calculateTotal().toFixed(2)}</div>
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 w-full sm:w-auto">
                           <button 
                               onClick={() => {
                                   setSelectedBase(WAFFLE_BASES[0]);
@@ -398,7 +398,7 @@ export const Customizer: React.FC = () => {
                           >
                               {justSaved ? <span className="text-sm font-bold px-1">Saved!</span> : <Save className="w-5 h-5" />}
                           </button>
-                          <Button className="px-8" onClick={handleAddToCart}>Add to Order</Button>
+                          <Button className="px-8 w-full sm:w-auto" onClick={handleAddToCart}>Add to Order</Button>
                         </div>
                     </div>
                     
@@ -499,7 +499,7 @@ export const Customizer: React.FC = () => {
           </div>
 
           {/* Right Panel: The Stage (Visual Preview) */}
-          <div className="lg:w-7/12 sticky top-24 min-h-[600px] flex flex-col items-center justify-center">
+          <div className="w-full lg:w-7/12 sticky top-24 min-h-[400px] md:min-h-[600px] flex flex-col items-center justify-center order-1 lg:order-2">
              
              {/* AI Chef Note Card (Floating) */}
              <AnimatePresence>
@@ -508,7 +508,7 @@ export const Customizer: React.FC = () => {
                       initial={{ opacity: 0, y: -20, rotate: -2 }}
                       animate={{ opacity: 1, y: 0, rotate: -2 }}
                       exit={{ opacity: 0, y: -20 }}
-                      className="absolute top-0 right-0 z-30 w-64 bg-[#fffdf5] p-6 shadow-xl rounded-sm border border-stone-200 rotate-2 transform origin-bottom-left"
+                      className="absolute top-0 right-0 z-30 w-64 bg-[#fffdf5] p-6 shadow-xl rounded-sm border border-stone-200 rotate-2 transform origin-bottom-left hidden md:block"
                       style={{ fontFamily: '"Indie Flower", cursive' }} 
                    >
                       <div className="flex items-center gap-2 mb-3 border-b border-stone-100 pb-2">
@@ -522,11 +522,11 @@ export const Customizer: React.FC = () => {
                 )}
              </AnimatePresence>
 
-             {/* The Plate Stage */}
-             <div className="relative w-[550px] h-[550px] flex items-center justify-center">
+             {/* The Plate Stage - Responsive Container */}
+             <div className="relative w-full max-w-[350px] md:max-w-[550px] aspect-square flex items-center justify-center">
                 
                 {/* Spotlight on floor */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[40px] bg-black/20 blur-3xl rounded-full" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[10%] bg-black/20 blur-3xl rounded-full" />
 
                 {/* Plate */}
                 <motion.div 

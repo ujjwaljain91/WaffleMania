@@ -45,7 +45,7 @@ export const Vibes: React.FC = () => {
   const steamParticles = Array.from({ length: 6 });
 
   return (
-    <section id="vibes" ref={ref} className="relative py-32 overflow-hidden bg-[#1a1614] text-amber-50">
+    <section id="vibes" ref={ref} className="relative py-24 md:py-32 overflow-hidden bg-[#1a1614] text-amber-50">
       {/* Audio Element */}
       <audio 
         ref={audioRef} 
@@ -112,7 +112,7 @@ export const Vibes: React.FC = () => {
                 <span>Immersive Experience</span>
             </div>
 
-            <h2 className="text-5xl lg:text-7xl font-bold mb-6 text-amber-50 font-serif tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-amber-50 font-serif tracking-tight">
               Cafe <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-orange-400">Ambience</span>
             </h2>
@@ -182,7 +182,7 @@ export const Vibes: React.FC = () => {
              {/* Cup Container */}
              <motion.div 
                 whileHover={{ rotate: 0, scale: 1.02 }}
-                className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl transform rotate-2 transition-all duration-700"
+                className="relative w-full max-w-sm md:max-w-md aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl transform rotate-2 transition-all duration-700"
              >
                 {/* Image */}
                 <img 
