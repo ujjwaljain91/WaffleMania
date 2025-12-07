@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
   const BLUEBERRY_IMG = "https://images.unsplash.com/photo-1484723091739-30a097e8f929?q=80&w=400&auto=format&fit=crop";
 
   return (
-    <section className="relative min-h-[100vh] md:min-h-[110vh] flex items-center pt-24 md:pt-20 overflow-hidden bg-[#FFF9F0] perspective-[1000px]">
+    <section className="relative min-h-[100dvh] md:min-h-[110vh] flex items-center pt-24 md:pt-20 overflow-hidden bg-[#FFF9F0] perspective-[1000px]">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_50%)]" />
         <Marquee />

@@ -266,7 +266,7 @@ export const Customizer: React.FC = () => {
                         onChange={(e) => setMoodInput(e.target.value)}
                         placeholder="e.g. It's a rainy Sunday and I need comfort..."
                         className="w-full bg-white border border-purple-200 rounded-xl px-4 py-3 text-base text-purple-900 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
-                        autoFocus
+                        // Removed autoFocus for better mobile UX
                       />
                       <button 
                         type="submit"
@@ -508,7 +508,7 @@ export const Customizer: React.FC = () => {
                       initial={{ opacity: 0, y: -20, rotate: -2 }}
                       animate={{ opacity: 1, y: 0, rotate: -2 }}
                       exit={{ opacity: 0, y: -20 }}
-                      className="absolute top-0 right-0 z-30 w-64 bg-[#fffdf5] p-6 shadow-xl rounded-sm border border-stone-200 rotate-2 transform origin-bottom-left hidden md:block"
+                      className="relative md:absolute md:top-0 md:right-0 z-30 w-full md:w-64 bg-[#fffdf5] p-4 md:p-6 shadow-xl rounded-sm border border-stone-200 md:rotate-2 transform md:origin-bottom-left mb-6 md:mb-0"
                       style={{ fontFamily: '"Indie Flower", cursive' }} 
                    >
                       <div className="flex items-center gap-2 mb-3 border-b border-stone-100 pb-2">
