@@ -1,20 +1,97 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+🍽️ Waffle Mania
 
-# Run and deploy your AI Studio app
+Waffle Mania is a modern, interactive, and visually appealing waffle-ordering website designed with smooth UI/UX, premium animations, and a delightful dessert shopping experience. Users can browse different waffle items, explore menu options, and enjoy a clean, responsive interface optimized for all devices.
 
-This contains everything you need to run your app locally.
+🚀 Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/drive/1fwBhUB6re1FealS-UO_-K7tggcRHXcKi
+Website: https://wafflemania.netlify.app/
 
-## Run Locally
+Repository: https://github.com/ujjwaljain91/WaffleMania
 
-**Prerequisites:**  Node.js
+📖 About the Project
+
+Waffle Mania is created to showcase a premium, immersive dessert website experience. The goal was to design a clean, engaging, and modern interface that encourages users to explore and buy their favorite waffles.
+
+This project reflects:
+
+Aesthetic UI/UX design
+
+Modern animations and smooth transitions
+
+Clean structure and responsive layout
+
+Realistic feel of an e-commerce dessert brand
+
+Whether you want to improve your UI/UX skills or demonstrate a high-quality front-end project, Waffle Mania serves as a great showcase.
+
+✨ Features
+
+✔️ Fully responsive and mobile-friendly
+
+✔️ Smooth animations & transitions
+
+✔️ Modern and clean design
+
+✔️ Interactive elements for engaging user experience
+
+✔️ Fast performance with optimized build
+
+✔️ Premium color theme and layout
+
+✔️ Simple and intuitive code structure
+
+🛠️ Tech Stack
+
+This project is built using:
+
+HTML5
+
+CSS3
+
+JavaScript
+
+Vite (for fast development & production build)
+
+Netlify (for live hosting)
+
+📂 Folder Structure
+WaffleMania/
+│── public/
+│── src/
+│   ├── assets/
+│   ├── components/
+│   ├── App.jsx
+│   ├── main.jsx
+│── index.html
+│── package.json
+│── vite.config.js
+
+🚀 Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/ujjwaljain91/WaffleMania.git
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Start Development Server
+npm run dev
+
+4️⃣ Build for Production
+npm run build
+
+🌐 Deployment
+
+The project is deployed on Netlify using the following configuration:
+
+Build Command: npm run build
+
+Publish Directory: dist
+
+Deploying Vite projects on Netlify ensures fast load time and smooth optimization for production.
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+👤 Author
+
+Ujjwal Jain
+B.Tech Student • UI/UX Designer 
+LinkedIn: https://www.linkedin.com/in/ujjwalux
