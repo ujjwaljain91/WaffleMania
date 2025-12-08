@@ -122,7 +122,7 @@ const SpecialCard: React.FC<{ item: SpecialItem, index: number }> = ({ item, ind
 
 export const Specials: React.FC = () => {
   return (
-    <section id="specials" className="py-24 relative bg-amber-50/50">
+    <section id="specials" className="py-24 relative bg-amber-50/50 overflow-hidden">
        {/* Decorative Background Blobs */}
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-orange-200/20 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-amber-200/20 rounded-full blur-[120px] pointer-events-none" />
@@ -133,7 +133,7 @@ export const Specials: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-amber-950 mb-4 font-serif"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-amber-950 mb-4 font-serif"
           >
             Curated Specials
           </motion.h2>

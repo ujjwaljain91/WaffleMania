@@ -77,6 +77,12 @@ export const Customizer: React.FC = () => {
       // Close sommelier input but keep mode open to see result
       setIsSommelierOpen(false);
       setMoodInput("");
+
+      // Smooth scroll to the visualization on mobile so user sees the result
+      const visualElement = document.getElementById('waffle-visual');
+      if (visualElement) {
+        visualElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
     setIsSommelierThinking(false);
   };
@@ -499,7 +505,7 @@ export const Customizer: React.FC = () => {
           </div>
 
           {/* Right Panel: The Stage (Visual Preview) - Order 1 on mobile to show first */}
-          <div className="w-full lg:w-7/12 sticky top-24 min-h-[400px] md:min-h-[600px] flex flex-col items-center justify-center order-1 lg:order-2">
+          <div id="waffle-visual" className="w-full lg:w-7/12 sticky top-24 min-h-[400px] md:min-h-[600px] flex flex-col items-center justify-center order-1 lg:order-2">
              
              {/* AI Chef Note Card (Floating) */}
              <AnimatePresence>
@@ -523,7 +529,7 @@ export const Customizer: React.FC = () => {
              </AnimatePresence>
 
              {/* The Plate Stage - Responsive Container */}
-             <div className="relative w-full max-w-[350px] md:max-w-[550px] aspect-square flex items-center justify-center">
+             <div className="relative w-full max-w-[85vw] sm:max-w-[350px] md:max-w-[550px] aspect-square flex items-center justify-center">
                 
                 {/* Spotlight on floor */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[10%] bg-black/20 blur-3xl rounded-full" />
